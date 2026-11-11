@@ -1,0 +1,111 @@
+create a DB - inventory_db
+create a simple maven project - hibernate_task. Add hibernate and PostgreSQL dependency.
+
+create META-INF --> persistence.xml file and add all DB details.
+
+----------------------------------------------------------------------------------------------
+You are required to develop a console-based Java application using Hibernate ORM with JPA to manage a Product Inventory System.
+
+The application should allow an organization to store, update, retrieve, analyze, and maintain product inventory data using JPA inbuilt methods and HQL (JPQL) queries.
+
+----------------------------------------------------------------------------------------------
+
+
+Entity class : Product
+
+Fields:
+
+productid (PK)
+
+productname
+
+category
+
+price
+
+quantity
+
+status [ AVAILABLE / OUT_OF_STOCK ]
+-----------------------------------------------------------------------------------------------
+Mandatory JPA Methods (all 4 has to be done dynamically)
+
+persist() – add product
+
+find() – search product by ID
+
+merge() – update quantity , price based on ID
+
+remove() – delete product by ID
+
+-------------------------------------------------------------------------------------------------
+Mandatory HQL Tasks
+
+Fetch all products
+
+Fetch products belonging to a specific category(dynamic)
+
+Fetch products with quantity less than n.(dynamic)
+
+Increase price by 50 for a category(dynamic)
+
+Delete products with zero quantity
+
+Count total products and display.
+
+Fetch a specific product based on product name(dynamic)
+
+Mark(update) Product status as OUT_OF_STOCK When quantity becomes 0
+
+Display all the products whose status is available
+
+
+
+
+
+
+
+
+
+class InventoryOperations
+{
+	EMF f = Per...
+	EM m = f....
+	ET t = m...
+	
+
+	public void addProducct() {
+
+		Product p = new Prod
+	}
+}
+
+
+class InventoryMain
+{
+	main() {
+		addproc()
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+create a new maven web project --> servlet_practise_project
+
+Create a Login Page (loginhere.html) - Fields: username, password
+
+To handle login request , create LoginServlet.java (url - "/loginhere") , accept the request and fetch data from req attribute
+	
+    Validate the credentials:
+
+	"admin" & "admin123" → mean admin is trying to login (valid login) OR "user" & "user123" → normal user is trying to login (valid login)
+
+     Any other → invalid login
+
+	If valid login :
+
+		Use RequestDispatcher.forward() to forward the request to RoleServlet.java (URL : /role)
+	
+	If invalid login :
+
+		Use RequestDispatcher.include() to reload login form with an error message (INCORRECT USERNAME OR PASSWORD).
+ 
+	RoleServlet.java --- >(URL : /role)
+
+		Fetch username from request.
+
+		If username is "admin" → then Redirect response to "AdminDashboard.html" 
+
+		If username is "user" → then Redirect response to "UserDashboard.html"
+
+	AdminDashboard.html
+
+		Just display: "Welcome Admin, You have full access."
+
+	UserDashboard.html
+
+		Just display: "Welcome User, You have limited access."
+
+
+
+
+
+

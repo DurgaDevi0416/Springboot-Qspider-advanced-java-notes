@@ -1,0 +1,193 @@
+Project Title
+
+Employee Feedback Management System using Spring MVC
+
+Objective
+---------
+Develop a simple Employee Feedback Management System using Spring MVC.
+
+The main objective of this task is to understand how a real-time web application is developed using the MVC architecture, where the Model, View, and Controller have separate responsibilities.
+
+-------------------------------------------------------------------------------------
+Scenario
+-------------------------------------------------------------------------------------
+
+Consider an organization where employees can submit feedback about their work environment.
+
+Develop a web application where an employee can:
+
+	Open the Employee Feedback System.
+	View the home page.
+	Open the feedback form.
+	Enter their details.
+	Submit the feedback.
+	View a confirmation page containing the submitted information.
+
+NOTE : 
+Use only Spring MVC + JSP.
+Use EL (${}) to display data on JSP.
+The application should follow the MVC architecture.
+
+
+
+-------------------------------------------------------------------------------------
+MVC Requirements
+-----------------------------------------------------------------------------------
+Your application must clearly demonstrate:
+
+
+Model
+Feedback.java
+
+Responsible for storing employee feedback data.
+
+View
+home.jsp
+feedback.jsp
+success.jsp
+
+Responsible for displaying the user interface.
+
+Controller
+DemoController.java
+
+Responsible for handling requests and controlling the flow of the application.
+
+
+-------------------------------------------------------------------------------------
+Requirements
+-------------------------------------------------------------------------------------
+1. Home Page
+	Create a JSP page called: home.jsp
+	The page should display:
+		Welcome to Employee Feedback Portal
+
+		Give Feedback (hyperlink)--> When the user clicks on Give Feedback, control should be transferred to the feedback.jsp form.
+
+2. Employee Feedback Form
+
+Create:	feedback.jsp
+	The form should contain the following fields:
+
+	Employee Name
+	Department
+	Feedback (Provide a textarea)
+	Submit Button 
+
+	The form should submit the data to the Spring MVC Controller using: POST
+
+
+
+3. Model Class
+	Create a model class: Feedback.java
+	The class should contain the following non-static variables:
+
+	name , department , feedback
+	Create appropriate:
+		Getters
+		Setters
+		No-argument constructor
+
+		The Feedback class should represent the data entered by the employee.
+
+4. Controller
+	Create: DemoController.java
+	The Controller should handle the following requests.
+
+	Requirement 1 – Home Page
+
+		Create a GET mapping for : / --> It should display :  home.jsp
+
+	Requirement 2 – Feedback Form
+
+		Create a GET mapping for : /feedback --> It should display : feedback.jsp
+
+	Requirement 3 – Submit Feedback
+
+		Create a POST mapping for : /submitFeedback --> The Controller should:
+
+			Receive the Feedback object (form data into feedback object).
+			Send the object to the success page using Spring MVC's Model.
+			Return the success page.
+	
+5. Success Page
+
+	Create : success.jsp
+
+	After submitting the feedback form, success.jsp page must display: 
+
+		Feedback Submitted Successfully!
+
+		Thank you, name value
+
+		Department: department value
+
+		Your Feedback: feedback value 
+
+		[ The values should be dynamic ].
+
+
+*** Bonus Task
+
+	Add a Back to Home link on the success page --> if user clicks on it , home.jsp must display
+
+-------------------------------------------------------------------------------------
+For example, if the employee enters:
+
+	Name       : Rahul
+	Department : Testing
+	Feedback   : Good working environment
+
+The success page should display:
+
+	Feedback Submitted Successfully!
+
+	Thank you, Rahul
+
+	Department: Testing
+
+	Your Feedback:
+	Good working environment
+
+-------------------------------------------------------------------------------------
+Expected Application Flow
+
+Your application should work in the following sequence :
+
+Run Application
+      ↓
+Home Page
+      ↓
+Click "Give Feedback"
+      ↓
+Controller receives request
+      ↓
+Feedback Form
+      ↓
+Enter Employee Details
+      ↓
+Click "Submit Feedback"
+      ↓
+Controller receives request
+      ↓
+Feedback Model(object) stores the data
+      ↓
+Controller sends object to view(success.jsp)
+      ↓
+Success Page
+      ↓
+Display Submitted Feedback 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
